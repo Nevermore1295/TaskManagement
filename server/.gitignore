@@ -1,0 +1,5 @@
+# Bỏ qua file môi trường
+.env
+
+# Bỏ qua thư mục `node_modules` để tránh đẩy lên GitHub
+node_modules/
