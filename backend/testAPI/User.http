@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:5000/api/users
+
+### Đăng ký tài khoản (Register)
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "email": "dao@gmail.com",
+    "name": "Hậu",
+    "password": "Hau12345"
+    
+}
+
+### Đăng nhập (Login)
+# @name login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "daoquanghau@gmail.com",
+    "password": "Hau12345"
+}
+
+### Lấy thông tin người dùng (Me)
+GET {{baseUrl}}/me
+Authorization: Bearer {{login.response.body.token}}
+
+### Cập nhật thông tin cá nhân (Update Profile)
+PUT {{baseUrl}}/profile
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.token}}
+
+{
+    "name": "Hậu Updated",
+    "is_deleted": "0",
+    "avatar": "null"
+}
